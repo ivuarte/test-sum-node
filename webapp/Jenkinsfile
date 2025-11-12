@@ -44,6 +44,11 @@ pipeline {
         build job: 'deploy-webapp-staging', parameters: [string(name: 'ARTIFACT_ID', value: "${env.ARTIFACT_ID}")], wait: false
       }
     }
+    stage('Archive source') {
+      sh 'git rev-parse HEAD > GIT_COMMIT'
+      sh 'tar -czf source.tar.gz --exclude=.git .'
+      archiveArtifacts artifacts: 'source.tar.gz,GIT_COMMIT', fingerprint: true
+    }
   }
 }
 
