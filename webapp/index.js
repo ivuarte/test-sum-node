@@ -1,6 +1,6 @@
 const Koa = require('koa');
 const Router = require('koa-router');
-//HOLa
+//HOL
 const app = new Koa();
 const router = new Router();
 const sum = require('./sum');
