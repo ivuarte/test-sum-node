@@ -14,7 +14,7 @@ fail() { echo "[$(date '+%F %T')] ERROR: $*" >&2; exit 1; }
 : "${CLIENTE:?Falta CLIENTE (identificador de cliente)}"
 
 SOURCE_ROOT="${SOURCE_ROOT:-$WORKSPACE}"                 # carpeta origen (repo que clonó el freestyle)
-TARGET_BRANCH="${TARGET_BRANCH:-main}"                   # rama a usar en save_log
+TARGET_BRANCH="${TARGET_BRANCH:-main}"                   # rama a usar en save_log 
 SRC_DIRS="${SRC_DIRS:-webapp/test jenkins-tests/test}"   # rutas relativas a SOURCE_ROOT
 CLONE_DIR="${CLONE_DIR:-$WORKSPACE/_save_log}"           # dónde clonar save_log
 GITHUB_USER="${GITHUB_USER:-ivuarte}"                    # usuario para el push
